@@ -79,14 +79,14 @@ const Contact = () => {
             <SignalNode
               icon={Mail}
               label={t("contact.email")}
-              value="gulsevar@example.com"
-              href="mailto:gulsevar@example.com"
+              value="arzikulovagulsevar7@gmail.com"
+              href="mailto:arzikulovagulsevar7@gmail.com"
             />
             <SignalNode
               icon={Phone}
               label={t("contact.phone")}
-              value="+998 90 123 4567"
-              href="tel:+998901234567"
+              value="+998 94 288 4211"
+              href="tel:+998942884211"
             />
             <SignalNode
               icon={MapPin}
