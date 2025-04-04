@@ -3,6 +3,7 @@ import { Inter, Playfair_Display, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { LanguageProvider } from "@/providers/LanguageProvider";
+import { Analytics } from "@vercel/analytics/react"
 import Header from "@/components/global/Header";
 import Footer from "@/components/global/Footer";
 
@@ -41,13 +42,14 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} ${spaceMono.variable} font-sans antialiased`}
       >
-        <LanguageProvider>
-          <ThemeProvider>
-            <Header />
-            <main>{children}</main>
-            <Footer />
-          </ThemeProvider>
-        </LanguageProvider>
+          <LanguageProvider>
+            <ThemeProvider>
+              <Header />
+              <main>{children}</main>
+              <Footer />
+            </ThemeProvider>
+          </LanguageProvider>
+        <Analytics />
       </body>
     </html>
   );
