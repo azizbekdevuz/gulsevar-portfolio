@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "echo 'husky v9+ active via package.json config'"
+    "format": "prettier --write .",
+    "type-check": "tsc --noEmit",
+    "prepare": "husky"
   },
   "husky": {
     "hooks": {
@@ -33,6 +35,7 @@
     "eslint-config-next": "15.2.4",
     "husky": "^9.1.7",
     "postcss": "^8.5.3",
+    "prettier": "^3.5.3",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
