@@ -31,13 +31,6 @@ const portfolioContent: Record<
   en: {
     timeline: [
       {
-        date: "Mar 2025 – Present",
-        role: "Script Writer",
-        org: "Dr. Mirkamol Nosirjonov",
-        link: "https://www.instagram.com/dr.mirkamol_nosirjon0v",
-        highlight: true,
-      },
-      {
         date: "Sep 2024 – Present",
         role: "Script Writer & Content Manager",
         org: "PiimaOlympiad & MittiMatematik",
@@ -91,13 +84,6 @@ const portfolioContent: Record<
   // Russian content
   ru: {
     timeline: [
-      {
-        date: "Март 2025 – Настоящее время",
-        role: "Сценарист",
-        org: "Др. Миркамол Носиржонов",
-        link: "https://www.instagram.com/dr.mirkamol_nosirjon0v",
-        highlight: true,
-      },
       {
         date: "Сент 2024 – Настоящее время",
         role: "Сценарист и контент-менеджер",
@@ -156,13 +142,6 @@ const portfolioContent: Record<
   // Uzbek content
   uz: {
     timeline: [
-      {
-        date: "Mart 2025 – Hozirgi kungacha",
-        role: "Ssenariy yozuvchisi",
-        org: "Dr. Mirkamol Nosirjonov",
-        link: "https://www.instagram.com/dr.mirkamol_nosirjon0v",
-        highlight: true,
-      },
       {
         date: "Sentabr 2024 – Hozirgi kungacha",
         role: "Ssenariy yozuvchisi va kontent menejeri",
