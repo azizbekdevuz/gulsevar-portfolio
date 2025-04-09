@@ -110,11 +110,10 @@ export default function Hero() {
                       aria-hidden="true"
                     />
                   </span>
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-rose-400 to-amber-400 dark:from-pink-300 dark:via-rose-200 dark:to-amber-200">
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-900 dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50">
                     Arzikulova
                   </span>
                 </motion.h1>
-
                 {/* Professional title */}
                 <motion.div
                   variants={{
