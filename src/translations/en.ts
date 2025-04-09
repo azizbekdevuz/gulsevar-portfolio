@@ -3,7 +3,7 @@ const en = {
   "nav.portfolio": "Portfolio",
   "nav.contact": "Contact",
   "footer.description":
-    "Creative script writer and story architect specializing in compelling narratives and engaging content.",
+    "Creative scenarist and content mamanger specializing in compelling narratives and engaging content.",
   "footer.sections": "Sections",
   "footer.developer": "Developer",
   "footer.designedBy": "Designed, developed and deployed by",
@@ -11,11 +11,11 @@ const en = {
     "The end of every story is just the beginning of another creative journey.",
   "footer.copyright": "All rights reserved.",
   "intro.tagline": "INTRODUCING",
-  title: "Creative Script Writer & Story Architect",
+  title: "Creative Scenarist & Content Manager",
   "intro.text":
-    "Crafting words into captivating stories that move, inspire, and sell.",
+    "YouTube + Instagram Scenario | Progrev | Creative | Telegram blogging",
   experience: "Experience",
-  "role.scriptwriter": "Script Writer",
+  "role.scriptwriter": "Scenarist",
   "role.contentManager": "Content Manager & Writer",
   "former.roles": "Former Copywriter, Tutor, and Youth Leader",
   "button.viewWork": "View Work",
@@ -33,7 +33,8 @@ const en = {
   "character.description":
     "A figure emerges from the shadows. This is GULSEVAR, a master storyteller with wisdom beyond her years.",
   "character.gulsevar": "GULSEVAR",
-  "gulsevar.line": "Every story has power. Let me show you how to unleash it.",
+  "gulsevar.line":
+    "There is no secret ingredient. It's all in us. \nJust a simple Uzbek girl following her dreams.",
   continued: "CONTINUED",
   "scroll.to.portfolio": "Scroll to portfolio section",
   "scroll.to.contact": "Scroll to contact section",

@@ -3,7 +3,7 @@ const uz = {
   "nav.portfolio": "Portfolio",
   "nav.contact": "Aloqa",
   "footer.description":
-    "Qiziqarli narrativlar va jozibali kontent yaratishga ixtisoslashgan ijodiy ssenariy yozuvchisi va hikoya arxitektori.",
+    "Qiziqarli narrativlar va jozibali kontent yaratishga ixtisoslashgan ijodiy ssenariy yozuvchisi va kontent menejeri.",
   "footer.sections": "Bo‘limlar",
   "footer.developer": "Dasturchi",
   "footer.designedBy":
@@ -12,9 +12,9 @@ const uz = {
     "Har bir hikoyaning oxiri - bu boshqa ijodiy sayohatning boshlanishi, xolos.",
   "footer.copyright": "Barcha huquqlar himoyalangan.",
   "intro.tagline": "TANISHING",
-  title: "Ijodiy ssenariy muallifi va hikoya arxitekturasi ustasi",
+  title: "Ijodiy ssenariy muallifi va kontent menejment ustasi",
   "intro.text":
-    "So‘zlarni ilhomlantiruvchi va sotuvchi hikoyalarga aylantiraman.",
+    "YouTube + Instagram stsenariysi | Progrev | Ijodiy | Telegramda blog yuritish.",
   experience: "Tajriba",
   "role.scriptwriter": "Ssenariy muallifi",
   "role.contentManager": "Kontent menejeri va muallif",
@@ -35,7 +35,7 @@ const uz = {
     "Soyadan bir inson chiqadi. Bu — GULSEVAR, dono hikoyachi.",
   "character.gulsevar": "GULSEVAR",
   "gulsevar.line":
-    "Har bir hikoya kuchga ega. Uni qanday ochish mumkinligini ko‘rsataman.",
+    "Hech qanday sirli tarkibiy qism yo‘q. Hammasi bizda. \nShunchaki oddiy o‘zbek qizi orzulari ortidan.",
   continued: "DAVOMI",
   "scroll.to.portfolio": "Portfolio bo‘limiga o‘tish",
   "scroll.to.contact": "Kontakt bo‘limiga o‘tish",
