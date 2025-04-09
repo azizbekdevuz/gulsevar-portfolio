@@ -4,35 +4,35 @@
 
 @layer base {
   :root {
-    /* Light theme */
-    --background: 0 0% 98%;
-    --foreground: 240 10% 3.9%;
+    /* Light theme - Keeping variable names but changing values to beige */
+    --background: 40 30% 98%;
+    --foreground: 40 10% 15%;
 
-    --primary: 330 90% 65%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 35 40% 60%;        /* Warm beige (equivalent to updated pink-500) */
+    --primary-foreground: 40 30% 98%;
 
-    --muted: 240 5% 84.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 35 15% 84.9%;
+    --muted-foreground: 35 10% 40%;
 
-    --accent: 35 85% 65%;
-    --accent-foreground: 240 5.9% 10%;
+    --accent: 25 40% 50%;         /* Terracotta accent (equivalent to updated amber-500) */
+    --accent-foreground: 40 30% 98%;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    /* Dark theme */
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    /* Dark theme - Keeping variable names but changing values to beige/brown */
+    --background: 35 15% 10%;
+    --foreground: 40 15% 90%;
 
-    --primary: 330 90% 65%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 35 30% 60%;        /* Muted beige for dark mode */
+    --primary-foreground: 40 10% 98%;
 
-    --muted: 240 5% 64.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 35 10% 40%;
+    --muted-foreground: 35 8% 65%;
 
-    --accent: 35 85% 65%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 25 35% 45%;         /* Deeper terracotta for dark mode */
+    --accent-foreground: 40 15% 90%;
   }
 
   /* Custom scrollbar */
@@ -69,28 +69,28 @@
     font-family: var(--font-space-grotesk);
   }
 
-  /* Text selection color */
+  /* Text selection color - using existing utility names */
   ::selection {
-    @apply bg-indigo-500/20 text-indigo-200;
+    @apply bg-amber-800/30 text-amber-100;
   }
 }
 
 @layer components {
-  /* Custom text glowing shadow effect */
+  /* Custom text glowing shadow effect - keeping class name */
   .text-glow {
     text-shadow:
       0 0 10px theme("colors.pink.500" / 40%),
       0 0 20px theme("colors.pink.500" / 20%);
   }
 
-  /* Custom button glow effect */
+  /* Custom button glow effect - keeping class name */
   .btn-glow {
     box-shadow:
       0 0 15px theme("colors.pink.500" / 30%),
       0 0 30px theme("colors.pink.500" / 10%);
   }
 
-  /* Cinematic text effect */
+  /* Cinematic text effect - keeping class name */
   .text-cinematic {
     letter-spacing: 2px;
     text-shadow: 0 0 8px theme("colors.amber.400" / 60%);
@@ -98,12 +98,12 @@
 }
 
 @layer utilities {
-  /* Custom gradient text */
+  /* Custom gradient text - keeping class name */
   .text-gradient-primary {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-amber-400;
   }
 
-  /* Thin line with gradient */
+  /* Thin line with gradient - keeping class name */
   .border-gradient-b {
     border-bottom-width: 1px;
     border-image: linear-gradient(

@@ -53,18 +53,40 @@ const config: Config = {
           100: "#e0e7ff",
           50: "#eef2ff",
         },
-        fuchsia: {
-          950: "#4a044e",
-          900: "#701a75",
-          800: "#86198f",
-          700: "#a21caf",
-          600: "#c026d3",
-          500: "#d946ef",
-          400: "#e879f9",
-          300: "#f0abfc",
-          200: "#f5d0fe",
-          100: "#fae8ff",
-          50: "#fdf4ff",
+        // Replace pink colors with beige tones (keeping the pink name)
+        pink: {
+          950: "#3c2217", // Dark beige/brown
+          900: "#6f442e",
+          800: "#874f37",
+          700: "#a5623e",
+          600: "#c2784a",
+          500: "#d18f59", // Main beige tone
+          400: "#daa97a",
+          300: "#e5c49e",
+          200: "#efdbc2",
+          100: "#f7ede3",
+          50: "#fdf8f1", // Lightest beige
+        },
+        // Replace amber colors with terracotta (keeping the amber name)
+        amber: {
+          950: "#351a15", // Dark terracotta
+          900: "#653428",
+          800: "#783c2f",
+          700: "#934735",
+          600: "#b15c3f",
+          500: "#c0714d", // Main terracotta
+          400: "#cd8c6d",
+          300: "#ddb29a",
+          200: "#ead1c2",
+          100: "#f5eae3",
+          50: "#fbf6f3", // Lightest terracotta
+        },
+        // Optional: Add real beige/terracotta for new components
+        beige: {
+          500: "#d18f59",
+        },
+        terracotta: {
+          500: "#c0714d",
         },
       },
       animation: {
@@ -82,8 +104,9 @@ const config: Config = {
         noise: "url('/noise.svg')",
       },
       boxShadow: {
-        glow: "0 0 20px rgba(99, 102, 241, 0.3)",
-        "glow-strong": "0 0 30px rgba(99, 102, 241, 0.5)",
+        // Keep existing shadow names but update their colors
+        glow: "0 0 20px rgba(209, 143, 89, 0.3)", // Updated to beige
+        "glow-strong": "0 0 30px rgba(209, 143, 89, 0.5)", // Updated to beige
       },
       transitionDuration: {
         "2000": "2000ms",
