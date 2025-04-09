@@ -14,7 +14,7 @@ const uz = {
   "intro.tagline": "TANISHING",
   title: "Ijodiy ssenariy muallifi va kontent menejment ustasi",
   "intro.text":
-    "YouTube + Instagram stsenariysi | Progrev | Ijodiy | Telegramda blog yuritish.",
+    "YouTube + Instagram ssenariysi | Progrev | Ijodiy | Telegramda blog yuritish.",
   experience: "Tajriba",
   "role.scriptwriter": "Ssenariy muallifi",
   "role.contentManager": "Kontent menejeri va muallif",
