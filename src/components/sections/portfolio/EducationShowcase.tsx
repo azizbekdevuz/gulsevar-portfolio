@@ -39,7 +39,7 @@ const EducationCardContent = memo(
       {education.degree && (
         <div className="mt-2 mb-3">
           <div className="flex items-start gap-2">
-            <BookOpen className="w-4 h-4 mt-0.5 text-indigo-500 dark:text-indigo-400" />
+            <BookOpen className="w-4 h-4 mt-0.5 text-pink-600 dark:text-pink-500" />
             <div className="text-zinc-700 dark:text-zinc-300">
               {education.degree}
             </div>
@@ -60,7 +60,7 @@ const EducationCardContent = memo(
 
       {!shouldReduceMotion && education.highlight && (
         <motion.div
-          className="mt-3 text-sm text-indigo-600 dark:text-indigo-300 flex items-center"
+          className="mt-3 text-sm text-pink-600 dark:text-pink-300 flex items-center"
           initial={{ opacity: 0, x: -5 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
@@ -144,7 +144,7 @@ export const EducationShowcase = ({
       {/* Education illustration - only on larger screens */}
       {!shouldReduceMotion && isLargeScreen && (
         <motion.div
-          className="hidden md:block absolute -top-4 -right-12 w-32 h-32 text-indigo-400 opacity-30 dark:opacity-20 pointer-events-none"
+          className="hidden md:block absolute -top-4 -right-12 w-32 h-32 text-amber-400 opacity-30 dark:opacity-20 pointer-events-none"
           initial={{ opacity: 0, scale: 0.8, rotate: -15 }}
           animate={{ opacity: 0.3, scale: 1, rotate: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
@@ -156,7 +156,7 @@ export const EducationShowcase = ({
       {/* Education path illustration */}
       {!shouldReduceMotion && (
         <motion.div
-          className="absolute left-8 top-12 bottom-0 w-0.5 bg-gradient-to-b from-indigo-600 via-indigo-400 to-indigo-200 dark:from-indigo-500 dark:via-indigo-600 dark:to-indigo-800"
+          className="absolute left-8 top-12 bottom-0 w-0.5 bg-gradient-to-b from-pink-500 via-pink-400 to-pink-200 dark:from-pink-600 dark:via-pink-700 dark:to-pink-800"
           initial={{ height: 0 }}
           animate={{ height: "95%" }}
           transition={{ duration: 1.5, ease: "easeOut" }}
@@ -183,7 +183,7 @@ export const EducationShowcase = ({
               }}
             >
               {/* Year marker */}
-              <div className="absolute left-1 -translate-x-full top-2 text-xs font-bold text-indigo-600 dark:text-indigo-400 opacity-70">
+              <div className="absolute left-1 -translate-x-full top-2 text-xs font-bold text-pink-600 dark:text-pink-400 opacity-70">
                 {year}
               </div>
 
@@ -191,8 +191,8 @@ export const EducationShowcase = ({
               <motion.div
                 className={`absolute left-4 -translate-x-1/2 top-2 z-10 w-4 h-4 rounded-full flex items-center justify-center ${
                   education.highlight
-                    ? "bg-indigo-500 dark:bg-indigo-400"
-                    : "bg-indigo-200 dark:bg-indigo-700"
+                    ? "bg-pink-500 dark:bg-pink-400"
+                    : "bg-pink-200 dark:bg-pink-700"
                 }`}
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
@@ -200,7 +200,7 @@ export const EducationShowcase = ({
               >
                 {education.highlight && !shouldReduceMotion && (
                   <motion.div
-                    className="absolute inset-0 rounded-full bg-indigo-500 dark:bg-indigo-400"
+                    className="absolute inset-0 rounded-full bg-pink-500 dark:bg-pink-400"
                     animate={{
                       scale: [1, 1.6, 1],
                       opacity: [1, 0, 1],
@@ -212,14 +212,14 @@ export const EducationShowcase = ({
                     }}
                   />
                 )}
-                <div className="w-2 h-2 rounded-full bg-white dark:bg-indigo-900" />
+                <div className="w-2 h-2 rounded-full bg-white dark:bg-pink-900" />
               </motion.div>
 
               {/* Education card */}
               <motion.div
                 className={`ml-10 rounded-xl border ${
                   education.highlight
-                    ? "border-indigo-200 dark:border-indigo-800/40"
+                    ? "border-amber-200 dark:border-amber-800/40"
                     : "border-zinc-200 dark:border-zinc-700"
                 } overflow-hidden bg-white/90 dark:bg-zinc-800/90 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300`}
                 whileHover={{ x: 5 }}
@@ -230,7 +230,7 @@ export const EducationShowcase = ({
                 <div
                   className={`p-4 cursor-pointer ${
                     education.highlight
-                      ? "bg-gradient-to-r from-indigo-50 to-transparent dark:from-indigo-900/20 dark:to-transparent"
+                      ? "bg-gradient-to-r from-pink-50 to-transparent dark:from-pink-900/20 dark:to-transparent"
                       : ""
                   }`}
                   onClick={() => toggleExpand(i)}
@@ -241,7 +241,7 @@ export const EducationShowcase = ({
                       <div
                         className={`flex-shrink-0 mt-0.5 w-8 h-8 rounded-md flex items-center justify-center ${
                           education.highlight
-                            ? "bg-indigo-100 text-indigo-600 dark:bg-indigo-900/40 dark:text-indigo-300"
+                            ? "bg-pink-100 text-pink-600 dark:bg-pink-900/40 dark:text-pink-300"
                             : "bg-zinc-100 text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400"
                         }`}
                       >
@@ -254,7 +254,7 @@ export const EducationShowcase = ({
 
                       {/* Institution details */}
                       <div>
-                        <div className="text-sm text-indigo-600 dark:text-indigo-300 font-medium">
+                        <div className="text-sm text-pink-600 dark:text-pink-300 font-medium">
                           {education.period}
                         </div>
                         <h3 className="text-base md:text-lg font-semibold text-zinc-900 dark:text-white mt-0.5">
@@ -291,7 +291,7 @@ export const EducationShowcase = ({
                       className="px-4 pb-4 pt-0"
                       layoutId={`details-${i}`}
                     >
-                      <div className="pl-11 border-l border-dashed border-indigo-100 dark:border-indigo-900/40 ml-[3px]">
+                      <div className="pl-11 border-l border-dashed border-amber-100 dark:border-amber-900/40 ml-[3px]">
                         <EducationCardContent
                           education={education}
                           isExpanded={isExpanded}
@@ -306,7 +306,7 @@ export const EducationShowcase = ({
                 {education.highlight && !shouldReduceMotion && (
                   <div className="absolute inset-0 overflow-hidden rounded-xl pointer-events-none">
                     <motion.div
-                      className="absolute top-0 -right-40 w-40 h-full transform -skew-x-12 bg-indigo-400/10 dark:bg-indigo-400/5"
+                      className="absolute top-0 -right-40 w-40 h-full transform -skew-x-12 bg-pink-400/10 dark:bg-pink-400/5"
                       animate={{
                         x: [0, 300, 0],
                       }}
