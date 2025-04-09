@@ -73,6 +73,7 @@ const portfolioContent: Record<
       tools: ["Google Docs", "Google Sheets", "Google Slides", "C++", "Swift"],
     },
     achievements: [
+      "Successful Graduate of Blogging Mentorship",
       "Creative Writer & Scenarist – Awarded by Umida Kenjayeva",
       "Ulugbek vorislari – Semi-finalist",
       "AIMO – Bronze Medal",
@@ -131,6 +132,7 @@ const portfolioContent: Record<
       tools: ["Google Docs", "Google Sheets", "Google Slides", "C++", "Swift"],
     },
     achievements: [
+      "Успешный выпускник курса наставничества в блогинге",
       "Творческий писатель и сценарист – Награда от Умиды Кенжаевой",
       "Улугбек ворислари – Полуфиналист",
       "AIMO – Бронзовая медаль",
@@ -189,6 +191,7 @@ const portfolioContent: Record<
       tools: ["Google Docs", "Google Sheets", "Google Slides", "C++", "Swift"],
     },
     achievements: [
+      "Bloglar bo'yicha murabbiylik bo'yicha muvaffaqiyatli bitiruvchi",
       "Ijodiy yozuvchi va ssenariy muallifi – Umida Kenjayeva tomonidan mukofotlangan",
       "Ulug'bek vorislari – Yarim finalchi",
       "AIMO – Bronza medal",
