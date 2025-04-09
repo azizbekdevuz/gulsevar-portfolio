@@ -43,6 +43,7 @@ const ru = {
   portfolio: "Портфолио",
   "portfolio.title": "Портфолио",
   "portfolio.employment": "Опыт работы",
+  "portfolio.education": "Образование и тренинги",
   "portfolio.skills.soft": "Гибкие навыки",
   "portfolio.skills.technical": "Технические навыки",
   "portfolio.certifications": "Сертификаты и достижения",

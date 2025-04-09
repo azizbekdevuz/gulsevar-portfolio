@@ -43,6 +43,7 @@ const en = {
   portfolio: "Portfolio",
   "portfolio.title": "Portfolio",
   "portfolio.employment": "Employment History",
+  "portfolio.education": "Education & Training",
   "portfolio.skills.soft": "Soft Skills",
   "portfolio.skills.technical": "Technical Skills",
   "portfolio.certifications": "Certifications & Achievements",

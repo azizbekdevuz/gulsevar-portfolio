@@ -44,6 +44,7 @@ const uz = {
   portfolio: "Portfolio",
   "portfolio.title": "Portfolio",
   "portfolio.employment": "Ish tajribasi",
+  "portfolio.education": "Ta'lim va treninglar",
   "portfolio.skills.soft": "Soft ko‘nikmalar",
   "portfolio.skills.technical": "Texnik ko‘nikmalar",
   "portfolio.certifications": "Sertifikatlar va yutuqlar",

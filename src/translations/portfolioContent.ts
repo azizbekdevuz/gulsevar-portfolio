@@ -18,6 +18,14 @@ export type SkillSet = {
 
 export type AchievementList = string[];
 
+export type EducationItem = {
+  period: string;
+  institution: string;
+  degree?: string;
+  highlight?: boolean;
+  certificateTitle?: string;
+};
+
 // Portfolio content for all languages
 const portfolioContent: Record<
   Language,
@@ -25,6 +33,7 @@ const portfolioContent: Record<
     timeline: TimelineItem[];
     skills: SkillSet;
     achievements: AchievementList;
+    education: EducationItem[];
   }
 > = {
   // English content
@@ -79,6 +88,37 @@ const portfolioContent: Record<
       "AIMO – Bronze Medal",
       "SEAMO – Bronze Medal (2x)",
       "English – C1 Level",
+    ],
+    education: [
+      {
+        period: "Aug 2024 - Present",
+        institution: "New Uzbekistan University",
+        degree: "Economics and Data Science",
+        highlight: true,
+      },
+      {
+        period: "Mar 2025 - Apr 2025",
+        institution: "'Blogging' Mentorship by Jasurbek Anvarov",
+        certificateTitle: "Successful Graduate",
+        highlight: true,
+      },
+      {
+        period: "Oct 2024 - Dec 2024",
+        institution: "'0 dan Ssenariy' Mentorship by Umida Kenjayeva",
+        certificateTitle: "Successful Graduate",
+        highlight: true,
+      },
+      {
+        period: "Oct 2021 - Jun 2024",
+        institution: "Presidential School, Samarkand",
+        degree: "A Level Curriculum (Biology, CS, Math)",
+        highlight: false,
+      },
+      {
+        period: "Sep 2013 - Oct 2021",
+        institution: "School #46, Jomboy, Samarkand",
+        highlight: false,
+      },
     ],
   },
 
@@ -139,6 +179,37 @@ const portfolioContent: Record<
       "SEAMO – Бронзовая медаль (2x)",
       "Английский язык – Уровень C1",
     ],
+    education: [
+      {
+        period: "Авг 2024 - Настоящее время",
+        institution: "Новый Университет Узбекистана",
+        degree: "Экономика и Анализ данных",
+        highlight: true,
+      },
+      {
+        period: "Март 2025 - Апр 2025",
+        institution: "Менторство «Блогинг» от Жасурбека Анварова",
+        certificateTitle: "Успешный выпускник",
+        highlight: true,
+      },
+      {
+        period: "Окт 2024 - Дек 2024",
+        institution: "Менторство «0 дан Ссенарий» от Умиды Кенжаевой",
+        certificateTitle: "Успешный выпускник",
+        highlight: true,
+      },
+      {
+        period: "Окт 2021 - Июнь 2024",
+        institution: "Президентская школа, Самарканд",
+        degree: "Программа A Level (Биология, Информатика, Математика)",
+        highlight: false,
+      },
+      {
+        period: "Сент 2013 - Окт 2021",
+        institution: "Школа №46, Джомбой, Самарканд",
+        highlight: false,
+      },
+    ],
   },
 
   // Uzbek content
@@ -197,6 +268,37 @@ const portfolioContent: Record<
       "AIMO – Bronza medal",
       "SEAMO – Bronza medal (2x)",
       "Ingliz tili – C1 darajasi",
+    ],
+    education: [
+      {
+        period: "Avgust 2024 - Hozirgi kungacha",
+        institution: "New Uzbekistan University",
+        degree: "Iqtisod va Ma'lumotlar tahlili",
+        highlight: true,
+      },
+      {
+        period: "Mart 2025 - Aprel 2025",
+        institution: "«Blogging» Mentorlik dasturi - Jasurbek Anvarov",
+        certificateTitle: "Muvaffaqiyatli bitiruvchi",
+        highlight: true,
+      },
+      {
+        period: "Oktyabr 2024 - Dekabr 2024",
+        institution: "«0 dan Ssenariy» Mentorlik dasturi - Umida Kenjayeva",
+        certificateTitle: "Muvaffaqiyatli bitiruvchi",
+        highlight: true,
+      },
+      {
+        period: "Okt 2021 - Iyun 2024",
+        institution: "Prezident maktabi, Samarqand",
+        degree: "A Level dasturi (Biologiya, Informatika, Matematika)",
+        highlight: false,
+      },
+      {
+        period: "Sentabr 2013 - Oktyabr 2021",
+        institution: "46-maktab, Jomboy, Samarqand",
+        highlight: false,
+      },
     ],
   },
 };

@@ -9,7 +9,13 @@ import {
   useSpring,
   AnimatePresence,
 } from "framer-motion";
-import { Briefcase, Star, Download, PenTool } from "lucide-react";
+import {
+  Briefcase,
+  Star,
+  Download,
+  PenTool,
+  GraduationCap,
+} from "lucide-react";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { usePortfolioContent } from "@/hooks/usePortfolioContent";
@@ -19,9 +25,10 @@ import { TabButton } from "./TabButton";
 import { ExperienceTimeline } from "./ExperienceTimeline";
 import { SkillsShowcase } from "./SkillShowcase";
 import { AchievementsShowcase } from "./AchievementsShowcase";
+import { EducationShowcase } from "./EducationShowcase";
 
 // Tab types
-type TabType = "experience" | "skills" | "achievements";
+type TabType = "experience" | "skills" | "achievements" | "education";
 
 const Portfolio = () => {
   const { t } = useLanguage();
@@ -31,7 +38,7 @@ const Portfolio = () => {
   const isLargeScreen = useMediaQuery("(min-width: 1024px)");
 
   // Get translated content
-  const { timeline, skills, achievements } = usePortfolioContent();
+  const { timeline, skills, achievements, education } = usePortfolioContent();
 
   // Active tab state
   const [activeTab, setActiveTab] = useState<TabType>("experience");
@@ -133,6 +140,13 @@ const Portfolio = () => {
                 shouldReduceMotion={shouldReduceMotion}
               />
               <TabButton
+                isActive={activeTab === "education"}
+                onClick={() => setActiveTab("education")}
+                icon={<GraduationCap className="w-4 h-4" />}
+                label={t("portfolio.education")}
+                shouldReduceMotion={shouldReduceMotion}
+              />
+              <TabButton
                 isActive={activeTab === "skills"}
                 onClick={() => setActiveTab("skills")}
                 icon={<PenTool className="w-4 h-4" />}
@@ -175,6 +189,15 @@ const Portfolio = () => {
             {activeTab === "experience" && (
               <ExperienceTimeline
                 items={timeline}
+                shouldReduceMotion={shouldReduceMotion}
+                isLargeScreen={isLargeScreen}
+              />
+            )}
+
+            {/* Education Tab */}
+            {activeTab === "education" && (
+              <EducationShowcase
+                items={education}
                 shouldReduceMotion={shouldReduceMotion}
                 isLargeScreen={isLargeScreen}
               />
