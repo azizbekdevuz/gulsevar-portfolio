@@ -109,18 +109,18 @@ export const ExperienceSection = ({
         <div className="space-y-3">
           <ExperienceItem
             icon={Film}
-            title={t("role.scriptwriter")}
-            company="Dr. Mirkamol Nosirjonov"
-            period={`Mar 2025 – ${t("present")}`}
+            title={t("role.contentManager")}
+            company="PiimaOlympiad & MittiMatematik"
+            period={`Sep 2024 – ${t("present")}`}
             colorClass="bg-pink-100/80 dark:bg-pink-900/30"
             iconColorClass="text-pink-600 dark:text-pink-300"
           />
 
           <ExperienceItem
             icon={BookOpen}
-            title={t("role.contentManager")}
-            company="PiimaOlympiad & MittiMatematik"
-            period={`Sep 2024 – ${t("present")}`}
+            title={t("role.scriptwriter")}
+            company="Amir Temurovich | Procontent"
+            period={`Dec 2024 – Feb 2025`}
             colorClass="bg-amber-100/80 dark:bg-amber-900/30"
             iconColorClass="text-amber-600 dark:text-amber-300"
           />
