@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback, memo } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import {
   GraduationCap,
@@ -25,6 +25,92 @@ interface EducationShowcaseProps {
   isLargeScreen: boolean;
 }
 
+// Memoized card content component to reduce re-renders
+const EducationCardContent = memo(
+  ({
+    education,
+    shouldReduceMotion,
+  }: {
+    education: EducationItem;
+    isExpanded: boolean;
+    shouldReduceMotion: boolean;
+  }) => (
+    <>
+      {education.degree && (
+        <div className="mt-2 mb-3">
+          <div className="flex items-start gap-2">
+            <BookOpen className="w-4 h-4 mt-0.5 text-indigo-500 dark:text-indigo-400" />
+            <div className="text-zinc-700 dark:text-zinc-300">
+              {education.degree}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {education.certificateTitle && (
+        <div className="mt-2">
+          <div className="flex items-start gap-2">
+            <Award className="w-4 h-4 mt-0.5 text-amber-500 dark:text-amber-400" />
+            <div className="text-amber-600 dark:text-amber-300">
+              {education.certificateTitle}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {!shouldReduceMotion && education.highlight && (
+        <motion.div
+          className="mt-3 text-sm text-indigo-600 dark:text-indigo-300 flex items-center"
+          initial={{ opacity: 0, x: -5 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          <ChevronRight className="w-3 h-3 mr-1" />
+          <span>Currently active</span>
+        </motion.div>
+      )}
+    </>
+  ),
+);
+
+EducationCardContent.displayName = "EducationCardContent";
+
+// Year extraction utility - moved outside component to prevent recreation
+const getYear = (period: string): string => {
+  const match = period.match(/\d{4}/);
+  return match ? match[0] : "";
+};
+
+// Animation variants defined outside component to prevent recreation on renders
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: (shouldReduceMotion: boolean) => ({
+    opacity: 1,
+    transition: {
+      staggerChildren: shouldReduceMotion ? 0.05 : 0.15,
+    },
+  }),
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
+
+const detailsVariants = {
+  hidden: { height: 0, opacity: 0 },
+  visible: {
+    height: "auto",
+    opacity: 1,
+    transition: { duration: 0.3 },
+  },
+};
+
+// Main component
 export const EducationShowcase = ({
   items,
   shouldReduceMotion,
@@ -33,56 +119,25 @@ export const EducationShowcase = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.2 });
 
-  // Track expanded items for accordion effect
-  const [expandedItems, setExpandedItems] = useState<number[]>([]);
+  // Track expanded items for accordion effect - using object for O(1) lookups
+  const [expandedItems, setExpandedItems] = useState<Record<number, boolean>>(
+    {},
+  );
 
-  const toggleExpand = (index: number) => {
-    setExpandedItems((prev) =>
-      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index],
-    );
-  };
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: shouldReduceMotion ? 0.05 : 0.15,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: "easeOut" },
-    },
-  };
-
-  const detailsVariants = {
-    hidden: { height: 0, opacity: 0 },
-    visible: {
-      height: "auto",
-      opacity: 1,
-      transition: { duration: 0.3 },
-    },
-  };
-
-  // Get year from period for the vertical timeline
-  const getYear = (period: string) => {
-    // Extract year from period string (assuming format like "Sep 2024 - Present")
-    const match = period.match(/\d{4}/);
-    return match ? match[0] : "";
-  };
+  // Memoized toggle function
+  const toggleExpand = useCallback((index: number) => {
+    setExpandedItems((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  }, []);
 
   return (
     <motion.div
       ref={containerRef}
       className="relative max-w-3xl mx-auto"
       variants={containerVariants}
+      custom={shouldReduceMotion}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
     >
@@ -111,7 +166,7 @@ export const EducationShowcase = ({
       {/* Education timeline */}
       <div className="relative space-y-12 ml-4">
         {items.map((education, i) => {
-          const isExpanded = expandedItems.includes(i);
+          const isExpanded = !!expandedItems[i];
           const year = getYear(education.period);
 
           return (
@@ -119,6 +174,13 @@ export const EducationShowcase = ({
               key={`${education.institution}-${i}`}
               className="relative"
               variants={itemVariants}
+              // Use will-change only when animation is active
+              style={{
+                willChange:
+                  isInView && !shouldReduceMotion
+                    ? "opacity, transform"
+                    : "auto",
+              }}
             >
               {/* Year marker */}
               <div className="absolute left-1 -translate-x-full top-2 text-xs font-bold text-indigo-600 dark:text-indigo-400 opacity-70">
@@ -136,7 +198,7 @@ export const EducationShowcase = ({
                 animate={{ scale: 1 }}
                 transition={{ delay: i * 0.1 + 0.5, duration: 0.3 }}
               >
-                {education.highlight && (
+                {education.highlight && !shouldReduceMotion && (
                   <motion.div
                     className="absolute inset-0 rounded-full bg-indigo-500 dark:bg-indigo-400"
                     animate={{
@@ -162,6 +224,7 @@ export const EducationShowcase = ({
                 } overflow-hidden bg-white/90 dark:bg-zinc-800/90 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300`}
                 whileHover={{ x: 5 }}
                 layout
+                layoutId={`education-card-${i}`}
               >
                 {/* Card header - always visible */}
                 <div
@@ -217,8 +280,8 @@ export const EducationShowcase = ({
                   </div>
                 </div>
 
-                {/* Expandable details */}
-                <AnimatePresence>
+                {/* Expandable details - using AnimatePresence for mount/unmount animations */}
+                <AnimatePresence initial={false}>
                   {isExpanded && (
                     <motion.div
                       initial="hidden"
@@ -226,41 +289,14 @@ export const EducationShowcase = ({
                       exit="hidden"
                       variants={detailsVariants}
                       className="px-4 pb-4 pt-0"
+                      layoutId={`details-${i}`}
                     >
                       <div className="pl-11 border-l border-dashed border-indigo-100 dark:border-indigo-900/40 ml-[3px]">
-                        {education.degree && (
-                          <div className="mt-2 mb-3">
-                            <div className="flex items-start gap-2">
-                              <BookOpen className="w-4 h-4 mt-0.5 text-indigo-500 dark:text-indigo-400" />
-                              <div className="text-zinc-700 dark:text-zinc-300">
-                                {education.degree}
-                              </div>
-                            </div>
-                          </div>
-                        )}
-
-                        {education.certificateTitle && (
-                          <div className="mt-2">
-                            <div className="flex items-start gap-2">
-                              <Award className="w-4 h-4 mt-0.5 text-amber-500 dark:text-amber-400" />
-                              <div className="text-amber-600 dark:text-amber-300">
-                                {education.certificateTitle}
-                              </div>
-                            </div>
-                          </div>
-                        )}
-
-                        {!shouldReduceMotion && education.highlight && (
-                          <motion.div
-                            className="mt-3 text-sm text-indigo-600 dark:text-indigo-300 flex items-center"
-                            initial={{ opacity: 0, x: -5 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.2 }}
-                          >
-                            <ChevronRight className="w-3 h-3 mr-1" />
-                            <span>Currently active</span>
-                          </motion.div>
-                        )}
+                        <EducationCardContent
+                          education={education}
+                          isExpanded={isExpanded}
+                          shouldReduceMotion={shouldReduceMotion}
+                        />
                       </div>
                     </motion.div>
                   )}
@@ -291,3 +327,6 @@ export const EducationShowcase = ({
     </motion.div>
   );
 };
+
+// Export memoized component to prevent unnecessary re-renders
+export default memo(EducationShowcase);
