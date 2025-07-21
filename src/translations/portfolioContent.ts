@@ -40,6 +40,13 @@ const portfolioContent: Record<
   en: {
     timeline: [
       {
+        date: "Apr 2025 – Present",
+        role: "Community Manager & Assistant",
+        org: "Rahimov School & Rahimov Kids Marketing Team",
+        link: "https://t.me/rahimovschool",
+        highlight: true,
+      },
+      {
         date: "Sep 2024 – Present",
         role: "Script Writer & Content Manager",
         org: "PiimaOlympiad & MittiMatematik",
@@ -125,6 +132,13 @@ const portfolioContent: Record<
   // Russian content
   ru: {
     timeline: [
+      {
+        date: "Апр 2025 – Настоящее время",
+        role: "Менеджер сообществ и помощник",
+        org: "Rahimov School & Rahimov Kids Marketing Team",
+        link: "https://t.me/rahimovschool",
+        highlight: true,
+      },
       {
         date: "Сент 2024 – Настоящее время",
         role: "Сценарист и контент-менеджер",
@@ -215,6 +229,13 @@ const portfolioContent: Record<
   // Uzbek content
   uz: {
     timeline: [
+      {
+        date: "Apr 2025 – Hozirgi kungacha",
+        role: "Kommunitiy menejer va yordamchi",
+        org: "Rahimov School & Rahimov Kids Marketing Team",
+        link: "https://t.me/rahimovschool",
+        highlight: true,
+      },
       {
         date: "Sentabr 2024 – Hozirgi kungacha",
         role: "Ssenariy yozuvchisi va kontent menejeri",
