@@ -5,6 +5,7 @@ import { Send } from "lucide-react";
 import { useLanguage } from "@/providers/LanguageProvider";
 import { useState } from "react";
 import { useSendStatus } from "@/hooks/useSendStatus";
+import emailjs from "emailjs-com";
 
 const inputClass = `
   w-full px-4 py-3 rounded-lg border 
@@ -18,7 +19,12 @@ const ContactFormTerminal = () => {
   const { t } = useLanguage();
   const { status, send } = useSendStatus();
 
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    time: "",
+    email: "",
+    message: "",
+  });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -26,11 +32,38 @@ const ContactFormTerminal = () => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+  const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+  const EMAILJS_USER_ID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID!;
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     send(async () => {
-      await new Promise((res) => setTimeout(res, 1500));
-      setForm({ name: "", email: "", message: "" });
+      try {
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          {
+            name: form.name,
+            time: new Date().toLocaleString("en-US", {
+              timeZone: "Asia/Tashkent",
+              year: "numeric",
+              month: "2-digit",
+              day: "2-digit",
+              hour: "2-digit",
+              minute: "2-digit",
+              second: "2-digit",
+            }),
+            email: form.email,
+            message: form.message,
+          },
+          EMAILJS_USER_ID,
+        );
+        setForm({ name: "", time: "", email: "", message: "" });
+      } catch (error) {
+        // Optionally, you can show an error message to the user
+        throw error;
+      }
     });
   };
 
