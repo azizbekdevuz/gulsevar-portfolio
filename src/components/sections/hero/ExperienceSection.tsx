@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BookOpen, Film } from "lucide-react";
+import { BookOpen, Film, Users } from "lucide-react";
 import {
   rolesContainerVariants,
   roleItemVariants,
@@ -107,6 +107,15 @@ export const ExperienceSection = ({
         </motion.h3>
 
         <div className="space-y-3">
+          <ExperienceItem
+            icon={Users}
+            title={t("role.communityManager")}
+            company="Rahimov School & Rahimov Kids Marketing Team"
+            period={`Apr 2025 – ${t("present")}`}
+            colorClass="bg-pink-100/80 dark:bg-pink-900/30"
+            iconColorClass="text-pink-600 dark:text-pink-300"
+          />
+
           <ExperienceItem
             icon={Film}
             title={t("role.contentManager")}
