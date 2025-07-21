@@ -17,6 +17,7 @@ const imageUrls = [
   "/assets/img/image1.jpg",
   "/assets/img/image2.jpg",
   "/assets/img/image3.jpg",
+  "/assets/img/image4.jpg",
 ];
 
 // Custom hook for preloading images to improve performance
@@ -94,17 +95,17 @@ export const ScriptVisual = ({
                     <Image
                       src={imageUrls[currentImageIndex]}
                       alt={`Slide ${currentImageIndex + 1}`}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      width={400}
+                      height={533}
                       priority={currentImageIndex === 0}
                       quality={90}
                       loading="eager"
-                      className="object-contain transition-opacity duration-300"
+                      className="object-contain w-full h-full transition-opacity duration-300"
                       style={{ opacity: isLoaded ? 1 : 0 }}
                       onLoadingComplete={(img) => {
-                        // Ensure smooth transition when each image loads
                         img.style.opacity = "1";
                       }}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
                     />
                   </div>
                 </motion.div>
