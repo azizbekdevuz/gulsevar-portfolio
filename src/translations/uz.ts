@@ -17,6 +17,7 @@ const uz = {
     "YouTube + Instagram ssenariysi | Progrev | Ijodiy | Telegramda blog yuritish.",
   experience: "Tajriba",
   "role.scriptwriter": "Ssenariy muallifi",
+  "role.communityManager": "Kommunitiy menejer va yordamchi",
   "role.contentManager": "Kontent menejeri va muallif",
   "former.roles": "Ilgari kopirayter, repetitor va yoshlar yetakchisi",
   "button.viewWork": "Ishlarni ko‘rish",

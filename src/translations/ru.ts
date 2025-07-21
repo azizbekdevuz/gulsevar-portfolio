@@ -16,6 +16,7 @@ const ru = {
     "Сценарий YouTube + Instagram | Progrev | Креатив | Ведение блога в Telegram",
   experience: "Опыт",
   "role.scriptwriter": "Сценарист",
+  "role.communityManager": "Менеджер сообществ и помощник",
   "role.contentManager": "Контент-менеджер и автор",
   "former.roles": "Бывший копирайтер, репетитор и лидер молодежи",
   "button.viewWork": "Посмотреть работы",

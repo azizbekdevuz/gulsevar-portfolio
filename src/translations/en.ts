@@ -16,6 +16,7 @@ const en = {
     "YouTube + Instagram Scenario | Progrev | Creative | Telegram blogging",
   experience: "Experience",
   "role.scriptwriter": "Scenarist",
+  "role.communityManager": "Community Manager & Assistant",
   "role.contentManager": "Content Manager & Writer",
   "former.roles": "Former Copywriter, Tutor, and Youth Leader",
   "button.viewWork": "View Work",
